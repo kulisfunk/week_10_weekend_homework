@@ -53,4 +53,15 @@ public class TestShoppingBasket {
         int result = basket.getSizeOfBasket();
         assertEquals(0, result);
     }
+
+    @Test
+    public void testBasketValue(){
+        PurchaseItem bread1 = new PurchaseItem("Warbertons", 150);
+        PurchaseItem dvd1 = new PurchaseItem("Interstellar", 999);
+        ShoppingBasket basket = new ShoppingBasket();
+        basket.addItem(bread1);
+        basket.addItem(dvd1);
+        int result = basket.getBasketValue();
+        assertEquals(1149, result);
+    }
 }

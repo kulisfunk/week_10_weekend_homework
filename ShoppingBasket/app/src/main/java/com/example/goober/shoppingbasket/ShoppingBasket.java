@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class ShoppingBasket {
 
     ArrayList<PurchaseItem> basket = new ArrayList<>();
+    int basketValue;
 
     public ShoppingBasket() {
 
@@ -30,5 +31,13 @@ public class ShoppingBasket {
 
     public void emptyBasket() {
         basket.clear();
+    }
+
+    public int getBasketValue() {
+        int value = 0;
+        for (int index = 0; index < basket.size(); index++){
+            value += basket.get(index).getPrice();
+        }
+        return value;
     }
 }
