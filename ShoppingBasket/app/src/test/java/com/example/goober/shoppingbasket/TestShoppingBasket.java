@@ -21,7 +21,7 @@ public class TestShoppingBasket {
 
     @Test
     public void testCanAddItemToBasket(){
-        PurchaseItem bread1 = new PurchaseItem("Warbertons", 150);
+        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
         ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         int result = basket.getSizeOfBasket();
@@ -31,8 +31,8 @@ public class TestShoppingBasket {
 
     @Test
     public void testCanRemoveItemFromBasket(){
-        PurchaseItem bread1 = new PurchaseItem("Warbertons", 150);
-        PurchaseItem dvd1 = new PurchaseItem("Interstellar", 999);
+        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
+        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
         ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         basket.addItem(dvd1);
@@ -44,8 +44,8 @@ public class TestShoppingBasket {
 
     @Test
     public void testCanEmptyBasket(){
-        PurchaseItem bread1 = new PurchaseItem("Warbertons", 150);
-        PurchaseItem dvd1 = new PurchaseItem("Interstellar", 999);
+        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
+        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
         ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         basket.addItem(dvd1);
@@ -56,12 +56,12 @@ public class TestShoppingBasket {
 
     @Test
     public void testBasketValue(){
-        PurchaseItem bread1 = new PurchaseItem("Warbertons", 150);
-        PurchaseItem dvd1 = new PurchaseItem("Interstellar", 999);
+        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
+        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
         ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         basket.addItem(dvd1);
-        int result = basket.getBasketValue();
+        int result = basket.getBasketBaseValue();
         assertEquals(1149, result);
     }
 }
