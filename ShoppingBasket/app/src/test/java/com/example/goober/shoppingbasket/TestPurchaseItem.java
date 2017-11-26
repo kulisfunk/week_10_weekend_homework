@@ -3,7 +3,6 @@ package com.example.goober.shoppingbasket;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.security.ProtectionDomain;
 
 import static com.example.goober.shoppingbasket.Items.BREAD;
 import static org.junit.Assert.assertEquals;
@@ -13,23 +12,28 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class TestPurchaseItem {
+    PurchaseItem bread1;
+    PurchaseItem bread2;
+    PurchaseItem bread3;
+    PurchaseItem dvd1;
+    PurchaseItem dvd2;
+    PurchaseItem dvd3 ;
 
     @Before
     public void setup() {
 
-        PurchaseItem bread1 = new PurchaseItem(BREAD);
-        PurchaseItem bread2 = new PurchaseItem(BREAD);
-        PurchaseItem bread3 = new PurchaseItem(BREAD);
-        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
-        PurchaseItem dvd2 = new PurchaseItem(Items.DVD);
-        PurchaseItem dvd3 = new PurchaseItem(Items.DVD);
+        bread1 = new PurchaseItem(BREAD);
+        bread2 = new PurchaseItem(BREAD);
+        bread3 = new PurchaseItem(BREAD);
+        dvd1 = new PurchaseItem(Items.DVD);
+        dvd2 = new PurchaseItem(Items.DVD);
+        dvd3 = new PurchaseItem(Items.DVD);
 
     }
 
 
     @Test
     public void testGetItemName(){
-        PurchaseItem bread1 = new PurchaseItem(BREAD);
         String result = bread1.getName();
         assertEquals("BREAD", result);
 
@@ -38,7 +42,6 @@ public class TestPurchaseItem {
 
     @Test
     public void testGetItemPrice(){
-        PurchaseItem bread1 = new PurchaseItem(BREAD);
         Double result = bread1.getPrice();
         assertEquals(150, result, 0.01);
 

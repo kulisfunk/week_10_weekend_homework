@@ -1,5 +1,6 @@
 package com.example.goober.shoppingbasket;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,10 +11,19 @@ import static org.junit.Assert.assertEquals;
 
 public class TestShoppingBasket {
 
+    ShoppingBasket basket;
+    PurchaseItem bread1;
+    PurchaseItem dvd1;
+
+    @Before
+    public void setup(){
+        basket = new ShoppingBasket();
+        bread1 = new PurchaseItem(Items.BREAD);
+        dvd1 = new PurchaseItem(Items.DVD);
+    }
+
     @Test
     public void testShoppingBasketIsEmpty(){
-
-        ShoppingBasket basket = new ShoppingBasket();
         int result = basket.getSizeOfBasket();
         assertEquals(0, result);
 
@@ -21,8 +31,6 @@ public class TestShoppingBasket {
 
     @Test
     public void testCanAddItemToBasket(){
-        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
-        ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         int result = basket.getSizeOfBasket();
         assertEquals(1, result);
@@ -31,9 +39,6 @@ public class TestShoppingBasket {
 
     @Test
     public void testCanRemoveItemFromBasket(){
-        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
-        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
-        ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         basket.addItem(dvd1);
         basket.removeItem(bread1);
@@ -44,9 +49,6 @@ public class TestShoppingBasket {
 
     @Test
     public void testCanEmptyBasket(){
-        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
-        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
-        ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         basket.addItem(dvd1);
         basket.emptyBasket();
@@ -56,9 +58,6 @@ public class TestShoppingBasket {
 
     @Test
     public void testBasketValue(){
-        PurchaseItem bread1 = new PurchaseItem(Items.BREAD);
-        PurchaseItem dvd1 = new PurchaseItem(Items.DVD);
-        ShoppingBasket basket = new ShoppingBasket();
         basket.addItem(bread1);
         basket.addItem(dvd1);
         int result = basket.getBasketBaseValue();

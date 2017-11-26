@@ -1,6 +1,5 @@
 package com.example.goober.shoppingbasket;
 
-import static android.R.attr.name;
 
 /**
  * Created by goober on 22/11/2017.

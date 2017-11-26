@@ -1,5 +1,6 @@
 package com.example.goober.shoppingbasket;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,25 +11,31 @@ import static org.junit.Assert.assertEquals;
 
 public class TestCustomer {
 
+    Customer customer1;
+    Customer customer2;
+
+    @Before
+    public void setup(){
+        customer1 = new Customer("Martin", true);
+        customer2 = new Customer("Martin", false);
+    }
+
     @Test
 
     public void testCustomerHasName(){
-        Customer customer1 = new Customer("Martin", true);
         String result = customer1.getName();
         assertEquals("Martin", result);
     }
     @Test
 
     public void testCustomerHasDiscountCard(){
-        Customer customer1 = new Customer("Martin", true);
         Boolean result = customer1.getDiscountCard();
         assertEquals(true, result);
     }
     @Test
 
     public void testCustomerDoesntHaveDiscountCard(){
-        Customer customer1 = new Customer("Martin", false);
-        Boolean result = customer1.getDiscountCard();
+        Boolean result = customer2.getDiscountCard();
         assertEquals(false, result);
     }
 }

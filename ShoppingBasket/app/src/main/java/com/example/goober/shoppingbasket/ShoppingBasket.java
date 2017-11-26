@@ -39,4 +39,10 @@ public class ShoppingBasket {
         }
         return value;
     }
+    
+
+    public String getNameOfItemInBasket(int index){
+        return basket.get(index).getName();
+
+    }
 }

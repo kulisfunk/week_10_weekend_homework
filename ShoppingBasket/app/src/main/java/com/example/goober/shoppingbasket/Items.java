@@ -10,7 +10,7 @@ public enum Items {
 
     BREAD(150.00),
     DVD(999.00),
-    BACON(250.00),
+    BACON(1000.00),
     EGGS(130.00);
 
     public Double value;
@@ -22,4 +22,5 @@ public enum Items {
     public Double getValue() {
         return value;
     }
+
 }
